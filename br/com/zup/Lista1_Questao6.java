@@ -5,10 +5,11 @@ public class Lista1_Questao6 {
         float valorHora = 5.2F;
         float qtdHoras = 250;
         float salarioBruto = valorHora * qtdHoras;
-        float inss = salarioBruto * 0.11F;
+        float inss = salarioBruto * 0.08F;
+        float ir = salarioBruto *0.11F;
         float sindicato = salarioBruto * 0.05F;
 
-        float salarioLiquido = salarioBruto - inss - sindicato;
+        float salarioLiquido = salarioBruto - inss - sindicato - ir;
 
         System.out.println("O valor do salário Bruto é R$" + salarioBruto);
         System.out.println("O valor pago ao INSS é R$" + inss);
