@@ -1,6 +1,6 @@
 package br.com.zup;
 
-public class Aula1Exemplo2 {
+public class Aula1_Exemplo2 {
     public static void main(String[] args) {
         //Armazenar valores na memória
         int numero1 = 20;
