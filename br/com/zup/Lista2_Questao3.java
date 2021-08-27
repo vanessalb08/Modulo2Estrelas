@@ -2,7 +2,7 @@ package br.com.zup;
 
 import java.util.Scanner;
 
-public class Lista3_Questao3 {
+public class Lista2_Questao3 {
     public static void main(String[] args) {
         Scanner objLeitor = new Scanner(System.in);
 
