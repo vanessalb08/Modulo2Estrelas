@@ -20,6 +20,7 @@ public class QuestaoLevelUp {
 
         String email, nome, telefone;
         String resposta;
+        String excluir;
 
         System.out.println("Digite o email do aluno:");
         email = leitor.nextLine();
@@ -29,24 +30,33 @@ public class QuestaoLevelUp {
         telefone = leitor.nextLine();
         cadastroAlunos.put(email,(" " + nome +" / " + telefone));
 
-        System.out.println("Deseja inserir mais um aluno? [S/N]");
+        System.out.println("Deseja adicionar mais algum aluno?\n A - Adicionar\nS - Sair do programa");
         resposta = leitor.nextLine();
 
-        while (resposta.equals("S") | resposta.equals("s")){
-            System.out.println("Digite o email, nome e telefone do aluno");
+        //colocar condição para os menus
+        // trocar o while por if e colocar as 3 opções disponíveis
+        //deixar em loop caso a pessoa digite o valor inválido
+        while (resposta.equals("A") | resposta.equals("a")){
+            System.out.println("Digite o email do aluno:");
             email = leitor.nextLine();
+            System.out.println("Digite o nome do aluno:");
             nome = leitor.nextLine();
+            System.out.println("Digite o telefone do aluno:");
             telefone = leitor.nextLine();
             cadastroAlunos.put(email,(" " + nome +" / " + telefone));
 
-            System.out.println("Deseja inserir mais um aluno?\nS - Sim\nN - Não");
+            System.out.println("O que deseja fazer agora?\n A- Adicionar\nE - Excluir\n S - Sair do programa");
             resposta = leitor.nextLine();
         }
-
-        for (String referencia : cadastroAlunos.keySet()){
-            System.out.println("Email: "+ referencia + ". Nome / telefone:" +cadastroAlunos.get(referencia));
+        if (resposta.equals("e") | resposta.equals("E")){
+            System.out.println("Digite o email do aluno que deseja excluir:");
+            excluir = leitor.nextLine();
+            cadastroAlunos.remove(excluir);
         }
 
+        for (String chaveAluno : cadastroAlunos.keySet()){
+            System.out.println("Email: "+ chaveAluno + ". Nome / telefone:" +cadastroAlunos.get(chaveAluno));
+        }
 
     }
 }

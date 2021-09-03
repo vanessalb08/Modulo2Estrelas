@@ -1,4 +1,4 @@
-package br.com.zup.Desafios;
+package br.com.zup.ListasDeExercicio.Lista5;
 
 import java.util.Scanner;
 
@@ -6,7 +6,7 @@ import java.util.Scanner;
     a. O menor valor
     b. O maior valor
     c. A soma dos valores.*/
-public class Desafio2_Lista5 {
+public class QuestaoLevelUp {
     public static void main(String[] args) {
 
         Scanner leitor  =new Scanner(System.in);

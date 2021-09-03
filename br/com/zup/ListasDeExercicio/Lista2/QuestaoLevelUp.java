@@ -1,6 +1,6 @@
-package br.com.zup.Desafios;
+package br.com.zup.ListasDeExercicio.Lista2;
 
-public class Desafio1_lista2 {
+public class QuestaoLevelUp {
     public static void main(String[] args) {
         float  metros = 600;
         float qtdLitros = metros/6;
