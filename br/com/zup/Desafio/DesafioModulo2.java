@@ -74,7 +74,7 @@ public class DesafioModulo2 {
             else if (opcao == 2){
                 //Mostrar mensagem caso a lista esteja vazia
                 if (funcionarios.size() == 0){
-                    System.out.println("Ainda não há funcionários cadastrados, por favor cadastre.");
+                    System.out.println("Não há funcionários cadastrados, por favor cadastre.");
                 }
                 else{
                     System.out.println("--------Funcionários cadastrados:--------");
@@ -85,14 +85,24 @@ public class DesafioModulo2 {
             else if (opcao == 3){
                 //Verificar se a lista está vazia
                 if (funcionarios.size() == 0){
-                    System.out.println("Não há funcionários cadastrados, por favor cadastre primeiro.");
+                    System.out.println("Não há funcionários cadastrados, por favor cadastre.");
                 }
                 //Caso não esteja, excluir
                 else{
                     System.out.println("Digite o CPF do funcionario que deseja excluir:");
                     excluir = leitor.nextLine();
-                    funcionarios.remove(excluir);
-                    System.out.println("Funcionário com CPF " + excluir + " excluído com sucesso");
+                    for ( String verificacaoCPF : funcionarios.keySet()){
+                        //Verificar se o cpf informado está cadastrado
+                        if (verificacaoCPF.equals(excluir)){
+                            funcionarios.remove(excluir);
+                            System.out.println("Funcionário com CPF " + excluir + " excluído com sucesso");
+                        }
+                        //Caso CPF não esteja cadastrado
+                        else{
+                            System.out.println("Não existe funcionário cadastrado com esse CPF");
+                        }
+                    }
+
                 }
             }
             //Sair do programa
