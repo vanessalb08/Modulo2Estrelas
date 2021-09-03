@@ -44,15 +44,35 @@ public class DesafioModulo2 {
                 System.out.println("Digite o CPF do funcionário:");
                 cpf = leitor.nextLine();
 
-                //Adicionando os dados a hashMap
-                funcionarios.put(cpf,"Nome: " + nome + "/ Telefone: "+ telefone + "/ E-mail: "+ email +"\n");
-                System.out.println("\n____________________________________");
-                System.out.println("Funcionário cadastrado com sucesso!");
-                System.out.println("____________________________________\n");
+                //Verificando se o CPF já está cadastrado
+                //Se a lista não estiver vazia, faz a verificação
+                if ( funcionarios.size() > 0){
+                    for ( String verificacaoCPF : funcionarios.keySet()){
+                        if (verificacaoCPF.equals(cpf)){
+                            System.out.println("Já existe um funcionário cadastrado com esse CPF");
+                        }
+                        //Caso não esteja
+                        else{
+                            //Adicionando os dados a hashMap
+                            funcionarios.put(cpf,"Nome: " + nome + "/ Telefone: "+ telefone + "/ E-mail: "+ email +"\n");
+                            System.out.println("\n____________________________________");
+                            System.out.println("Funcionário cadastrado com sucesso!");
+                            System.out.println("____________________________________\n");
+                        }
+                    }
+                }
+                //Caso a lista esteja vazia, adiciona diretamente
+                else{
+                    funcionarios.put(cpf,"Nome: " + nome + "/ Telefone: "+ telefone + "/ E-mail: "+ email +"\n");
+                    System.out.println("\n____________________________________");
+                    System.out.println("Funcionário cadastrado com sucesso!");
+                    System.out.println("____________________________________\n");
+                }
+
             }
             //Mostrar lista de funcionários
             else if (opcao == 2){
-                //Mostrar mensageme caso a lista esteja vazia
+                //Mostrar mensagem caso a lista esteja vazia
                 if (funcionarios.size() == 0){
                     System.out.println("Ainda não há funcionários cadastrados, por favor cadastre.");
                 }
